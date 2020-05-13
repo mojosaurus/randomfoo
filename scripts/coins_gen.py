@@ -13,7 +13,7 @@ heads = sg.fromfile("res/svg/rupee-heads.svg")
 headsRoot  = heads.getroot()
 
 # This is the number of coins. Input
-numCoins = 3
+numCoins = 6
 
 # Spits out the various arragments to get numTails scenario. Input
 z=0
@@ -23,6 +23,9 @@ for numTails in range(0,numCoins+1):
 
     # TODO: This does not take care of the condition 5 heads, 5 tails is different from 5 tails 5 heads.
     # Need to incorporate that
+    if (numCoins % 2) ==0 and  (numCoins/2 == numTails):
+        print ("Win condition. Reversing")
+        #combos.extend(combos[::-1])
     # Now execute the various scenarios, and print outcomes
     outcomes = []
 
